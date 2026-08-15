@@ -1,1 +1,10 @@
 # Trading-Volatility
+
+This project is invovled in expalaing and testing some of the trading strategies listed in (Z. Kakushadze and J.A. Serur. 151 Trading Strategies). I have always been interested in the idea of non directional trading, having zero exposure to the underlying. The strategies I focus on here involve trading volaltity, this means taking a position on future volatility,
+
+the strategies I address are:
+- VIX futures basis Trading
+- Volatility risk premium trading, gamma hedging
+- Volatility trading with variance swaps
+
+lets start by making important definitions, firstly, what is volatility 
