@@ -1,0 +1,6 @@
+import pandas as pd
+
+# Cboe publishes historical data per contract, e.g.:
+url = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VX_History.csv"
+df = pd.read_csv(url)
+print(df.head())
