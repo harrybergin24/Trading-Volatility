@@ -1,0 +1,53 @@
+# Vix futures basis trading strategy
+
+
+
+# we have the data
+
+# for a varaince swap the pay out is just based off the notional so we can do percent returns 
+# 
+
+import pandas as pd  
+import numpy as np
+import matplotlib.pyplot as plt
+
+# gettin our slider 
+from matplotlib.widgets import Slider
+
+#varaince strike 
+
+# x axis 
+realised_vol = np.linspace(0, 0.50, 3000)
+
+# this is our payoff fucniton and we need so set some paramters stirke will be chaged later
+
+N = 1 # notional trading amount for here not really needed
+k = 0.20
+
+
+vs_payoff = N * (realised_vol ** 2 - k ** 2)
+
+# now lets make figure
+
+fig, ax = plt.subplots()
+
+
+# plot payoff curve 
+#  
+ax.plot(realised_vol, vs_payoff)
+
+# put the x axis trhough 0 payoff
+
+ax.spines['left'].set_position(('data', 0))
+
+ax.spines['bottom'].set_position(('data', 0))
+
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+
+ax.set_xlabel("realised vol")
+ax.set_ylabel("Payoff Function")
+
+plt.savefig("Variance_swap_trading/Figures/variance_swap_payoff.png")
+plt.close()
