@@ -94,5 +94,5 @@ So finally our method will be using, using VIX as a proxy. The vix uses the same
 
 ## Backtest
 
-The stratergy we are backtesting is the payout of a variance swap over 30 days, rolling contracts. 
+The maths outlined above leds us to us VIX as a propety $ K_{\text{var}} $
 

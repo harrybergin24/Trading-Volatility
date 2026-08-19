@@ -9,4 +9,4 @@ the strategies I address are:
 
 lets start by making important definitions, firstly, what is volatility, variance and their distance. 
 
-[Variance Swaps](<Variance _swap_trading/variance_swap.md>)
+[Variance Swaps](<Variance_swap_trading/variance_swap.md>)  
