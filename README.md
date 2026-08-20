@@ -7,6 +7,5 @@ the strategies I address are:
 - Volatility risk premium trading, gamma hedging
 - Volatility trading with variance swaps
 
-lets start by making important definitions, firstly, what is volatility, variance and their distance. 
 
 [Variance Swaps](<Variance_swap_trading/variance_swap.md>)  

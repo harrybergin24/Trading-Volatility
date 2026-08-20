@@ -40,7 +40,7 @@ If you are shorting a variance swap you belvie that the realised voltilty will b
 3. Estimating using the voltaitlty surface
 
 
-lets adress the first one, the rules of thumb. 90% put option implied volility, what this is saying for a underlying strike price $\lambda$, we use $0.9\lambda$. This idea comes from Carr & Madan (1998), “Towards a Theory of Volatility Trading” 
+Lets Address the first one, This idea comes from Carr & Madan (1998), “Towards a Theory of Volatility Trading” 
 
 "
 *By combining static positions in options with dynamic trading in futures, payo s related to realized volatility can be achieved whichhave either no exposure to price, or whichhave an exposure contingent on certain price levels being achieved in spefcied time intervals*" 

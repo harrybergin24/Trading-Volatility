@@ -4,13 +4,13 @@ import yfinance as yf
 import numpy as np
 
 
-spx = yf.download("^GSPC", start="2000-01-01", end="2026-01-01")
+sp100 = yf.download("^OEX", start="2000-01-01", end="2026-01-01")
 
-vix = yf.download("^VIX", start="2000-01-01", end="2026-01-01")
+vxo = yf.download("^VXO", start="2000-01-01", end="2026-01-01")
 
 
-prices_spx = spx["Close"].squeeze()
-prices_vix = vix["Close"].squeeze()
+prices_spx = sp100["Close"].squeeze()
+prices_vix = vxo["Close"].squeeze()
 #daily log prices for the S&P 500 
 
 log_return_daily = np.log(prices_spx).diff()
@@ -73,7 +73,6 @@ for z in vrp_z:
             position = -1
             entry_today = -1
             Trading_days = 0
-       
         elif z < -entry_req:
             position = 1 # short var
             entry_today = 1
@@ -118,40 +117,9 @@ payoff = position * (realised_var_30d - Kvar.loc[entry_record.index])
 var_swap_return = 1 + payoff
 
 
-plt.plot(var_swap_return)
-plt.title("Strategy Payoff Over Time")
-plt.savefig("Variance_swap_trading/Figures/variance_swap_return_spx")
-plt.close()
-#entries_full = pd.DataFrame({
-    #"Position": entry_record,
-   # "Kvar": Kvar.loc[entry_record.index],
-   # "RealizedVar_30d": realised_var_30d
-#})
 cumulative_payoff = (payoff).cumsum()
-
-mean_payoff = payoff.mean()
-std_payoff = payoff.std()
-
-sharpe_per_payoff = mean_payoff / std_payoff
-
-trades_per_yr = len(payoff) / 26
-
-sharpe_annual = sharpe_per_payoff * np.sqrt(trades_per_yr)
-
-
-print(sharpe_annual)
-
-plt.plot(cumulative_payoff)
-
 plt.title("Cumulative Strategy Payoff Over Time")
-plt.savefig("Variance_swap_trading/Figures/cumlative_variance_swap_return")
+plt.savefig("Variance_swap_trading/Figures/variance_swap_return_sp_100")
 plt.close()
-
-
-
-
-
-
-
 
 
