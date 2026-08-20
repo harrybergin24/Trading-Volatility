@@ -18,13 +18,13 @@ log_return_daily = np.log(prices_spx).diff()
 Kvar = (prices_vix / 100) ** 2
 
 
-window = 30
+window = 21
 
 # now use previous variance to come up with an estimate value for what Kvar should be
 
 daily_variance_forecast = log_return_daily.rolling(window).var()
 
-forecast_30d_variance = 30 * daily_variance_forecast
+forecast_30d_variance = (252/window) * daily_variance_forecast
 
 
 
@@ -53,14 +53,15 @@ roll_std = vrp.expanding(min_periods=252).std()
 
 vrp_z = ((vrp - roll_mean) / roll_std).dropna() 
 
-
+vrp_z = vrp_z[vrp_z.index < "2018-01-01"]      # in-sample
+#vrp_z = vrp_z[vrp_z.index >= "2018-01-01"]   # out-of-sample
 
 print(vrp_z)
 
 position = 0 # 0 nothign , 1 long var swap, -1 short var swap 
 
 positions = [] 
-entry_req = 0.5
+entry_req = 0.20
 Trading_days = 0
 
 
@@ -72,11 +73,6 @@ for z in vrp_z:
         if z > entry_req:
             position = -1
             entry_today = -1
-            Trading_days = 0
-       
-        elif z < -entry_req:
-            position = 1 # short var
-            entry_today = 1
             Trading_days = 0
     else:
         Trading_days += 1
@@ -113,12 +109,12 @@ for date in entry_record.index:
 
 realised_var_30d = pd.Series(realised_var_30d, name="RealisedVar_30d")
 
-payoff = position * (realised_var_30d - Kvar.loc[entry_record.index])
-
-var_swap_return = 1 + payoff
+payoff = entry_record * (realised_var_30d - Kvar.loc[entry_record.index])
 
 
-plt.plot(var_swap_return)
+
+
+plt.plot(payoff)
 plt.title("Strategy Payoff Over Time")
 plt.savefig("Variance_swap_trading/Figures/variance_swap_return_spx")
 plt.close()
@@ -143,8 +139,9 @@ print(sharpe_annual)
 
 plt.plot(cumulative_payoff)
 
-plt.title("Cumulative Strategy Payoff Over Time")
-plt.savefig("Variance_swap_trading/Figures/cumlative_variance_swap_return")
+plt.title("SPX Variance Swap Cumlative Returns, Out Of sample")
+plt.figtext(0.5, 0.01, f"Sharpe_In_Sample: {sharpe_annual:.2f}", ha="center", fontsize=9)
+plt.savefig("Variance_swap_trading/Figures/Cumlative_Variance_Swap_Return_In_Sample")
 plt.close()
 
 

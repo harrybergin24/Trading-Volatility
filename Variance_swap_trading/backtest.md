@@ -33,28 +33,33 @@ Kvar = (prices_vix / 100) ** 2
 
 # Forecasting Volatility 
 
-here we use a previo  
+here we use a previous months variance to forecast the next 30 days, in the future I hope to change this possibly comparing different forecasts for volatilty.   
 ```python
 window = 21
 daily_variance_forecast = log_return_daily.rolling(window).var()
 
-forecast_30d_variance = 30 * daily_variance_forecast
+forecast_30d_variance = (252/window) * daily_variance_forecast
 ```
 
-# So we have our log prices now we can make signal
+ So we have our log prices now we can make signal
 
-# rules we will implement
+ rules we will implement
 
-# we go long/ short variance depending on our expectation for variance
+#we go long/ short variance depending on our expectation for variance
 
-# our signal is Kvar - E[RV], the markets expected variance vs ours
+ our signal is Kvar - E[RV], the markets expected variance vs ours
 
-# this is VRP
+ this is VRP
 
+# Defining The volatiltiy risk premium
+
+This is a topic I have been fasicnated by for over 3 years, I 
+
+
+[Carr and Wu, 2009]
+
+```python
 vrp = Kvar - forecast_30d_variance
-
-# originally made a look forward error here using the total
-# std and mean for the whole data set when should on rolling basis
 
 roll_mean = vrp.expanding(min_periods=252).mean()
 
@@ -62,27 +67,30 @@ roll_std = vrp.expanding(min_periods=252).std()
 
 vrp_z = ((vrp - roll_mean) / roll_std).dropna()
 
+vrp_z = vrp_z[vrp_z.index < "2018-01-01"]      # in-sample
+#vrp_z = vrp_z[vrp_z.index >= "2018-01-01"]   # out-of-sample
 
 print(vrp_z)
+```
 
+
+
+# Signal Creation
+
+I adapt my signal generation from my pairs trading stratergy, as it is the same basic concept of mean reversion. Here I enter when the VRP is either too high or too low. This was good pratice of python general concepts lists, dicts and such, which I learnt from my programming module and kaggle course. Possibly in the futuer as i study "Mastering Python For Finance", I hope to be able to learn how to programme more complicated stratergies such as introducing a weighting factor. 
+```python
 position = 0  # 0 nothing, 1 long var swap, -1 short var swap
 
 positions = []
 entry_req = 0.5
 Trading_days = 0
 
-
-# Signal Creation
-
-I adapt my signal generation from my pairs trading stratergy, as it is the same basic concept of mean reversion. Here I enter when the VRP is either too high or too low, 
-
-```python
 for z in vrp_z:
     entry_today = 0
 
     if position == 0:
 
-        if z > entry_req:
+        if z > entry_req:  
             position = -1
             entry_today = -1
             Trading_days = 0
@@ -94,22 +102,24 @@ for z in vrp_z:
 
     else:
 
-        Trading_days += 1
+        Trading_days += 1  # this is so we dont enter another swap until its matured
 
         if Trading_days >= 30:
             position = 0
             Trading_days = 0
 
     positions.append(entry_today)
+
+positions_series = pd.Series(
+    positions,
+    index=vrp_z.index,
+    name="Position"
+)
 ```
+# Removing Rows 
+Here I remove the rows where no trades are entered, so it just returns the date and value of the postion(long or short). Entry record here is importat as it gives us the start date of the swap and then from there calculate the payoff of the swap, reciving the $ K_{\text{var}} $ value when shorting and then paying the realised. 
 
-positions_series = pd.Series(
-    positions,
-    index=vrp_z.index,
-    name="Position"
-)
-
-# keep only the rows where a position was actually entered (1 or -1)
+```python
 entry_record = positions_series[positions_series != 0]
 
 positions_series = pd.Series(
@@ -117,10 +127,7 @@ positions_series = pd.Series(
     index=vrp_z.index,
     name="Position"
 )
-
-# keep only the rows where a position was actually entered (1 or -1)
-entry_record = positions_series[positions_series != 0]
-
+```
 # so entry record is important as it gives the start date of the swap
 # and whether we are shorting or going long
 
@@ -159,7 +166,9 @@ payoff = position * (
 
 var_swap_return = 1 + payoff
 
+# Stratergy Return per swap
 
+```python
 plt.plot(var_swap_return)
 
 plt.title("Strategy Payoff Over Time")
@@ -169,13 +178,8 @@ plt.savefig(
 )
 
 plt.close()
-
-
-# entries_full = pd.DataFrame({
-#     "Position": entry_record,
-#     "Kvar": Kvar.loc[entry_record.index],
-#     "RealizedVar_30d": realised_var_30d
-# })
+```
+![Variance Swap Payoff, Strike = 0.2](Figures/variance_swap_return.png)
 
 ## Performance metrics
 
@@ -200,6 +204,7 @@ sharpe_annual = (
 print(sharpe_annual)
 ```
 
+
 ## The graph
 
 Now here is the plot of 
@@ -207,14 +212,16 @@ Now here is the plot of
 ```python
 plt.plot(cumulative_payoff)
 
-plt.title("Cumulative Strategy Payoff Over Time")
+plt.title("SPX Variance Swap Cumlative Returns")
 
 plt.savefig(
     "Variance_swap_trading/Figures/cumlative_variance_swap_return"
 )
 plt.close()
 ```
-![Variance Swap Payoff, Strike = 0.2](Figures/cumlative_variance_swap_return.png)
+![Variance Swap Payoff](Figures/Cumlative_Variance_Swap_Return_In_Sample.png) ![Nasdaq Variance Swap Payoff](Figures/Cumlative_Variance_Swap_Return_Out_Of_Sample.png)
+
+
 
 ## References
 
