@@ -96,3 +96,6 @@ So finally our method will be using, using VIX as a proxy. The vix uses the same
 
 The maths outlined above leds us to us VIX as a propety $ K_{\text{var}} $
 
+
+## References
+
