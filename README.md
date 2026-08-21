@@ -12,7 +12,7 @@ the strategies I address are:
 
  ## [Variance Swaps](<Variance_swap_trading/variance_swap.md>)  
 
- Here I learn alot 
+The thinking behind this backtest is that the VIX methodology is similar, using a weighted strip of OTM options to come up with a 'fair strike'. 
 
 
 
