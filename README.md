@@ -5,3 +5,8 @@ This project is involved in explaining and testing some of the trading strategie
  ## [Variance Swaps](<Variance_swap_trading/variance_swap.md>)  
 
 Here I backtest a variance swap strategy by attempting to use vix as a estimator of the 'fair strike', using a z-score of the Volatility Risk Premium, the premium investors are willing to pay to avoid negative returns, seen through investors willing to pay high put prices pushing up implied volatility, creating this idea we are hoping to exploit 'expensive' volatility. I explain the theory behind variance swaps, in the link above, and then in [Backtest](<Variance_swap_trading/backtest.md>) I walk through my signal explaining my logic and code, finallly showing the results of the out of sample backtesting. I analyse and attempt to explain the results in [Conculsions](<Variance_swap_trading/Conculsions.md>)
+
+## VRP Trading with gamma hedging
+
+This is another stratergy I would like to explore in the future, however, first I will need to improve my mathematics. This is why I am taking Topics in mathematics with applications to Finance, along with reading 'Mastering python for finance' to ensure I can program these intresting ideas. 
+
