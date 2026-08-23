@@ -4,9 +4,9 @@ import yfinance as yf
 import numpy as np
 
 
-spx = yf.download("^GSPC", start="2000-01-01", end="2026-01-01")
+spx = yf.download("^GSPC", start="1995-01-01", end="2026-08-01")
 
-vix = yf.download("^VIX", start="2000-01-01", end="2026-01-01")
+vix = yf.download("^VIX", start="1995-01-01", end="2026-08-01")
 
 
 prices_spx = spx["Close"].squeeze()
@@ -24,7 +24,12 @@ window = 21
 
 daily_variance_forecast = log_return_daily.rolling(window).var()
 
-forecast_30d_variance = (252/window) * daily_variance_forecast
+prev_15_day_var = log_return_daily.rolling(15).var() *252
+prev_30_day_var = log_return_daily.rolling(30).var() *252
+prev_60_day_var = log_return_daily.rolling (60).var() *252
+prev_90_day_var = log_return_daily.rolling(90).var() *252
+
+forecast_variance = 0.5*prev_15_day_var + 0.3*prev_30_day_var + 0.15*prev_60_day_var + 0.05*prev_90_day_var
 
 
 
@@ -40,7 +45,7 @@ forecast_30d_variance = (252/window) * daily_variance_forecast
 
 
 
-vrp = Kvar - forecast_30d_variance 
+vrp = Kvar - forecast_variance 
 # orginally made a look forward error here using the total 
 #std and mean for the whole data set when should on rolling baiss
 
@@ -53,8 +58,8 @@ roll_std = vrp.expanding(min_periods=252).std()
 
 vrp_z = ((vrp - roll_mean) / roll_std).dropna() 
 
-vrp_z = vrp_z[vrp_z.index < "2018-01-01"]      # in-sample
-#vrp_z = vrp_z[vrp_z.index >= "2018-01-01"]   # out-of-sample
+#vrp_z = vrp_z[(vrp_z.index >= "2018-01-01") &]    
+vrp_z = vrp_z[vrp_z.index >= "2018-01-01"]   # out-of-sample
 
 print(vrp_z)
 
@@ -139,9 +144,9 @@ print(sharpe_annual)
 
 plt.plot(cumulative_payoff)
 
-plt.title("SPX Variance Swap Cumlative Returns, Out Of sample")
+plt.title("Adapted Vol Forecast SPX VS returns")
 plt.figtext(0.5, 0.01, f"Sharpe_In_Sample: {sharpe_annual:.2f}", ha="center", fontsize=9)
-plt.savefig("Variance_swap_trading/Figures/Cumlative_Variance_Swap_Return_In_Sample")
+plt.savefig("Variance_swap_trading/Figures/Adapted_vol_forecast_SPX_returns_OFS", dpi= 65)
 plt.close()
 
 

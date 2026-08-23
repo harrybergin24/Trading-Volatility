@@ -4,9 +4,9 @@ import yfinance as yf
 import numpy as np
 
 
-nasdaq = yf.download("^NDX", start="2000-01-01", end="2026-01-01")
+nasdaq = yf.download("^NDX", start="2001-02-01", end="2026-08-01")
 
-vxn = yf.download("^VXN", start="2000-01-01", end="2026-01-01")
+vxn = yf.download("^VXN", start="2001-02-01", end="2026-08-01")
 
 
 prices_spx = nasdaq["Close"].squeeze()
@@ -24,7 +24,12 @@ window = 21
 
 daily_variance_forecast = log_return_daily.rolling(window).var()
 
-forecast_30d_variance = (252/window) * daily_variance_forecast
+prev_15_day_var = log_return_daily.rolling(15).var() *252
+prev_30_day_var = log_return_daily.rolling(30).var() *252
+prev_60_day_var = log_return_daily.rolling (60).var() *252
+prev_90_day_var = log_return_daily.rolling(90).var() *252
+
+forecast_variance = 0.5*prev_15_day_var + 0.3*prev_30_day_var + 0.15*prev_60_day_var + 0.05*prev_90_day_var
 
 
 
@@ -40,7 +45,7 @@ forecast_30d_variance = (252/window) * daily_variance_forecast
 
 
 
-vrp = Kvar - forecast_30d_variance 
+vrp = Kvar - forecast_variance 
 # orginally made a look forward error here using the total 
 #std and mean for the whole data set when should on rolling baiss
 
@@ -53,8 +58,7 @@ roll_std = vrp.expanding(min_periods=252).std()
 
 vrp_z = ((vrp - roll_mean) / roll_std).dropna() 
 
-vrp_z = vrp_z[vrp_z.index < "2018-01-01"]      # in-sample
-#vrp_z = vrp_z[vrp_z.index >= "2018-01-01"]   # out-of-sample
+vrp_z = vrp_z[vrp_z.index >= "2018-01-01"] 
 
 
 print(vrp_z)
@@ -62,7 +66,7 @@ print(vrp_z)
 position = 0 # 0 nothign , 1 long var swap, -1 short var swap 
 
 positions = [] 
-entry_req = 0.25
+entry_req = 0.15
 Trading_days = 0
 
 
@@ -124,9 +128,10 @@ trades_per_yr = len(payoff) / 26
 sharpe_annual = sharpe_per_payoff * np.sqrt(trades_per_yr)
 
 print(sharpe_annual)
+print(len(payoff))
 plt.plot(cumulative_payoff)
 
-plt.title("Nasdaq Variance Swap Culmative Returns In Sample")
-plt.figtext(0.5, 0.01, f"Sharpe_In_Sample: {sharpe_annual:.2f}", ha="center", fontsize=9)
-plt.savefig("Variance_swap_trading/Figures/variance_swap_return_nasdaq_in_sample")
+plt.title("Adapted Vol Forecast Nasdaq VS returns")
+plt.figtext(0.5, 0.01, f"Sharpe: {sharpe_annual:.2f}", ha="center", fontsize=9)
+plt.savefig("Variance_swap_trading/Figures/nasdaq_variance_swap_return", dpi = 65)
 plt.close()

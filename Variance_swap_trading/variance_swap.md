@@ -92,9 +92,9 @@ so going back to our formula higher option prices leads to a higher $ K_{\text{v
 So finally our method will be using, using VIX as a proxy. The vix uses the same excat method as Demeterfi, Derman, Kamal & Zou. However, Vix just square roots the solution then mutiplys it by 100. As I do have access to historical VIX data and S&P 500. Now we are in a postion we can estimate values for $ K_{\text{var}} $ and $ v(T) $. The only difference is VIX uses the CBOE interplotion method.
 
 
-## Backtest
+## [Backtest](<backtest.md>)
 
-The maths outlined above leds us to us VIX as a propety $ K_{\text{var}} $
+The maths outlined above leds us to us VIX as a propety $ K_{\text{var}} $ 
 
 
 ## References

@@ -128,9 +128,11 @@ positions_series = pd.Series(
     name="Position"
 )
 ```
-# so entry record is important as it gives the start date of the swap
-# and whether we are shorting or going long
+# Make a record of date entered swap
 
+Here we make a record of the dat entered the swap and then calucated the next 30 realised vol,  
+
+```python
 realised_var_30d = {}
 
 for date in entry_record.index:
@@ -165,6 +167,7 @@ payoff = position * (
 )
 
 var_swap_return = 1 + payoff
+```
 
 # Stratergy Return per swap
 
@@ -219,8 +222,12 @@ plt.savefig(
 )
 plt.close()
 ```
-![Variance Swap Payoff](Figures/Cumlative_Variance_Swap_Return_In_Sample.png) ![Nasdaq Variance Swap Payoff](Figures/Cumlative_Variance_Swap_Return_Out_Of_Sample.png)
+![Variance Swap Payoff](Figures/Cumlative_Variance_Swap_Return_In_Sample.png) ![Out of sample payoff](Figures/Cumlative_Variance_Swap_Return_Out_Of_Sample.png)
 
+
+The large reduction in sharpe, can possilby be explained by reduced underfitting and large expsoure to tail risk. The large drawdowns across equites causes a change in volaility, as variance swaps are short 'vol of vol'. We see this when we exculde the year 2020 we get a sharpe ratio of 1. 
+
+![Nasdaq](Figures/Figures/variance_swap_return_nasdaq.png)
 
 
 ## References

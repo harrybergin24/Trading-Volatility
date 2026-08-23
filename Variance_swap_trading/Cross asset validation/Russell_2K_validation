@@ -60,7 +60,7 @@ print(vrp_z)
 position = 0 # 0 nothign , 1 long var swap, -1 short var swap 
 
 positions = [] 
-entry_req = 0.5
+entry_req = 0.20
 Trading_days = 0
 
 
