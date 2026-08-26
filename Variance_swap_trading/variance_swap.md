@@ -12,10 +12,7 @@ Variance Swaps are a derivative contract, that pays the realized votltity over a
 
 
 To start off with some maths we have to establish the payoff of the variance swap. As done in '151 Trading Strategys', lets define the payoff of a varaiance swap at maturity time T. as
-$$
-P(T) = N \times (v(T)- K) 
-$$
-where $ v(T) $ is the realized variance at time T and the variance strike K, the value of which $ P(T) = 0$. In the file [Variance Swaps Trading](<Variance _swap_trading/variance_swap_trading.py>)
+$P(T) = N \times (v(T)- K) $ where $ v(T) $ is the realized variance at time T and the variance strike K, the value of which $ P(T) = 0$. In the file [Variance Swaps Trading](<Variance _swap_trading/variance_swap_trading.py>)
 
 ![Variance Swap Payoff](Figures/variance_swap_payoff.png)
 
