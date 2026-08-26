@@ -22,11 +22,12 @@ where $ v(T) $ is the realized variance at time T and the variance strike K, the
 we get the payouts of a voltiltiy swap at each of the realzied volitites, accoridng to a swap with a strike volitiiy of 20%. Here we see a variance swap has a convex payoff function, why might this be? because of the nature of varaince being volitility squared, hence the payoff is a quadratic fucntion causing convexity of returns, which is much more attractive than linear payoffs. 
 
 if we look at when 
-
-$ P(T) = 0 \rightarrow v(T) = k $ 
-
-$ v(T) = k \rightarrow \sigma ^2 = k $ where $\sigma $ is the realised vol
-
+$$
+ P(T) = 0 \rightarrow v(T) = k 
+$$
+$$
+v(T) = k \rightarrow \sigma ^2 = k $ where $\sigma $ is the realised vol
+$$
 If you are shorting a variance swap you belvie that the realised voltilty will be less than the market actually thinks, and vice versa.
 
 ## Dicussion of Methodlogys
