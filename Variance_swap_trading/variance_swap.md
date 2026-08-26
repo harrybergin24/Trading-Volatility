@@ -28,7 +28,7 @@ $$
 $$
 
 $$
-v(T) = k \rightarrow \sigma ^2 = k $ where $\sigma $ is the realised vol
+v(T) = k \rightarrow \sigma ^2 = k  where \sigma  is the realised vol
 $$
 If you are shorting a variance swap you belvie that the realised voltilty will be less than the market actually thinks, and vice versa.
 
