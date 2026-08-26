@@ -12,7 +12,7 @@ Variance Swaps are a derivative contract, that pays the realized votltity over a
 
 
 To start off with some maths we have to establish the payoff of the variance swap. As done in '151 Trading Strategys', lets define the payoff of a varaiance swap at maturity time T. as
-$P(T) = N \times (v(T)- K) $ where $ v(T) $ is the realized variance at time T and the variance strike K, the value of which $ P(T) = 0$. In the file [Variance Swaps Trading](<Variance _swap_trading/variance_swap_trading.py>)
+$P(T) = N \times (v(T)- K)$ where $v(T)$ is the realized variance at time T and the variance strike K, the value of which $P(T) = 0$. In the file [Variance Swaps Trading](<Variance _swap_trading/variance_swap_trading.py>)
 
 ![Variance Swap Payoff](Figures/variance_swap_payoff.png)
 
@@ -25,9 +25,10 @@ $$
 $$
 
 $$
-v(T) = k \rightarrow \sigma ^2 = k  where \sigma  is the realised vol
+v(T) = k \rightarrow \sigma ^2 = k 
 $$
-If you are shorting a variance swap you belvie that the realised voltilty will be less than the market actually thinks, and vice versa.
+
+where  $\sigma$  is the realised vol, if you are shorting a variance swap you belvie that the realised voltilty will be less than the market actually thinks, and vice versa.
 
 ## Dicussion of Methodlogys
 
@@ -87,9 +88,9 @@ So for the $ \frac{1}{K^2}$ weighting we see that deep OTM has a larger impact t
 
 "*average excess return .... is as low as -95% per month for deep out the money (OTM) puts*" 
 
-so going back to our formula higher option prices leads to a higher $ K_{\text{var}} $, this takes into effect the voltility skew.
+so going back to our formula higher option prices leads to a higher $K_{\text{var}}$, this takes into effect the voltility skew.
 
-So finally our method will be using, using VIX as a proxy. The vix uses the same excat method as Demeterfi, Derman, Kamal & Zou. However, Vix just square roots the solution then mutiplys it by 100. As I do have access to historical VIX data and S&P 500. Now we are in a postion we can estimate values for $ K_{\text{var}} $ and $ v(T) $. The only difference is VIX uses the CBOE interplotion method.
+So finally our method will be using, using VIX as a proxy. The vix uses the same excat method as Demeterfi, Derman, Kamal & Zou. However, Vix just square roots the solution then mutiplys it by 100. As I do have access to historical VIX data and S&P 500. Now we are in a postion we can estimate values for $K_{\text{var}}$ and $v(T)$. There are a few differences in replication method and the Vix.
 
 
 ## [Backtest](<backtest.md>)
