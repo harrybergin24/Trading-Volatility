@@ -48,3 +48,5 @@ In the future It would be intresting to test these methods against eachother, se
 ![alt text](Figures/nasdaq_variance_swap_return.png)![alt text](Figures/Adapted_vol_forecast_SPX_returns_OFS.png)
 
 Here we observe, using our updated volatility forecasting that selling or buying volatility when it is under or overpriced performs much better for the NASDAQ.
+
+
