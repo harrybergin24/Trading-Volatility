@@ -8,15 +8,15 @@
 
 ## Introducing Variance Swaps
 
-Variance Swaps are a derivative contract, that pays the realized votltity over at time $ T $ compared to a pre agreeed upon variance, called the strike in this case. Here the investor in the variance swap views volitliy as an asset class instead of a metric of risk. 
+Variance Swaps are a derivative contract, that pays the realized volatility over at time $ T $ compared to a pre-agreed upon variance, called the strike in this case. Here the investor in the variance swap views volatility as an asset class instead of a metric of risk. 
 
 
-To start off with some maths we have to establish the payoff of the variance swap. As done in '151 Trading Strategys', lets define the payoff of a varaiance swap at maturity time T. as
+To start off with some maths we have to establish the payoff of the variance swap. As done in '151 Trading Strategy's', lets define the payoff of a variance swap at maturity time T. as
 $P(T) = N \times (v(T)- K)$ where $v(T)$ is the realized variance at time T and the variance strike K, the value of which $P(T) = 0$. In the file [Variance Swaps Trading](<Variance _swap_trading/variance_swap_trading.py>)
 
 ![Variance Swap Payoff](Figures/variance_swap_payoff.png)
 
-we get the payouts of a voltiltiy swap at each of the realzied volitites, accoridng to a swap with a strike volitiiy of 20%. Here we see a variance swap has a convex payoff function, why might this be? because of the nature of varaince being volitility squared, hence the payoff is a quadratic fucntion causing convexity of returns, which is much more attractive than linear payoffs. 
+we get the payouts of a volatility swap at each of the realised volatilities, according to a swap with a strike volatility of 20%. Here we see a variance swap has a convex payoff function, why might this be? because of the nature of varaince being volitility squared, hence the payoff is a quadratic fucntion causing convexity of returns, which is much more attractive than linear payoffs. 
 
 if we look at when 
 
@@ -32,7 +32,7 @@ where  $\sigma$  is the realised vol, if you are shorting a variance swap you be
 
 ## Discussion of Methodology's
 
- So how do we find out what k, the rate of volatility the market expects: 
+So how do we find out what k, the rate of volatility the market expects: 
 
 1. Replication and Rules of thumb
 
@@ -43,7 +43,7 @@ Lets Address the first one, This idea comes from Carr & Madan (1998), “Towards
 "
 *By combining static positions in options with dynamic trading in futures, payouts related to realized volatility can be achieved which have either no exposure to price, or which have an exposure contingent on certain price levels being achieved in specified time intervals*" 
 
-Here they discover using static positions in options, a strip of OTM options and then hedging with futures to remove directionality they are left with quadratic variance payoffs. Then Demeterfi, Derman, Kamal & Zou (1999), “More Than You Ever Wanted to Know About Volatility Swaps” come up with the modern replication formula that is used commonly today. In [Carr & madan (1998)] they prove for any twice differentiable payoff fucntion, they can be written by a static replication of options, then Demeterfi, Derman, Kamal & Zou they derive for log replication and address many key problems.
+Here they discover using static positions in options, a strip of OTM options and then hedging with futures to remove directionality they are left with quadratic variance payoffs. Then Demeterfi, Derman, Kamal & Zou (1999), “More Than You Ever Wanted to Know About Volatility Swaps” come up with the modern replication formula that is used commonly today. In [Carr & Madan (1998)] they prove for any twice differentiable payoff function, they can be written by a static replication of options, then Demeterfi, Derman, Kamal & Zou they derive for log replication and address many key problems.
 
 $$
 K_{\text{var}} = \sqrt{\frac{2}{T}
@@ -92,10 +92,16 @@ So finally our method will be using, using VIX as a proxy. The VIX uses the same
 
 ## [Backtest](<backtest.md>)
 
-The maths outlined above leads us to us VIX as a property $ K_{\text{var}} $ 
+The maths outlined above leads us to us VIX as a proxy for $ K_{\text{var}} $. In this file I walk through the code that I use to create a back test for the strategy. 
 
 
 ## References
 
+Kakushadze, Zura and Serur, Juan Andrés, 151 Trading Strategies (August 17, 2018). Z. Kakushadze and J.A. Serur. 151 Trading Strategies. Cham, Switzerland: Palgrave Macmillan, an imprint of Springer Nature, 1st Edition (2018), XX, 480 pp; ISBN 978-3-030-02791-9, Available at SSRN: https://ssrn.com/abstract=3247865
+
+Demeterfi, K., Derman, E., Kamal, M., & Zou, J. (1999). More Than You Ever Wanted to Know About Volatility Swaps. Goldman Sachs Quantitative Strategies Research Notes, 41, 1–56.
+
 Carr, P., & Madan, D. (2010). Towards a Theory of Volatility Trading. In E. Jouini, J. Cvitanic, & M. Musiela (Eds.), Handbooks in Mathematical Finance: Option Pricing, Interest Rates and Risk Management. Cambridge University Press. 
+
+Bondarenko, O. (2014). Why Are Put Options So Expensive? The Quarterly Journal of Finance, 4(3), 1450015. 
 
