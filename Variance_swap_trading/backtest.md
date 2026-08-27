@@ -3,7 +3,7 @@
 
 Here I attempt to create a backtest for a variance swap stratergy, deciding to enter a postion based on previous volatilty as a future forecasted voltiltiy. This is certinaly an area that can be improved possibly using Garch to model future volaitlity. From Here we decide to enter a postion based on the deviations from the mean. Here I return the returns in addative variance points.
 
-## libaries
+## Libaries
 ```python
 import matplotlib.pyplot as plt
 import pandas as pd   
