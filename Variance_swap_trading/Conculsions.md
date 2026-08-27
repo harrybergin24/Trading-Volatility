@@ -1,18 +1,27 @@
 # Conculsions
+- NASDAQs relationship to volatility is different to our SPX
+- Variance swaps are short vol of vol
+- Improving volatility forecast improves Sharpe Ratio
+
+
 
 ## Variance swaps are short 'vol of vol'
 As I point out in [Backtest](<Variance_swap_trading/backtest.md>) for the out of sample test, the sharpe ratio for the whole period is 0.08, However, when we remove the large drawdown period of 2020 our sharpe ratio rises to 1. This shows us that when we take short volatility postions there are large tail risks, because of the fact variance is 'short vol of vol', We can show this by doing some simple calculas:
+
 $$
 P(T) = N \times (K_{\text{var}} - v(T) ) 
 $$
- This is the payoff of a short variance swap 
+
+This is the payoff of a short variance swap 
 
 $$
 \frac{dP(T)}{d\sigma} = -2N\sigma
 $$
+
 $$
 \frac{d^2P(T)}{d\sigma^2} = -2N
 $$
+
 We can see that changes in the volatility are negative for the payoff. 
 
 ## Chaning the Volatility Forecast
