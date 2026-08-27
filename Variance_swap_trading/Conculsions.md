@@ -50,3 +50,5 @@ In the future It would be intresting to test these methods against eachother, se
 Here we observe, using our updated volatility forecasting that selling or buying volatility when it is under or overpriced performs much better for the NASDAQ.
 
 
+
+
