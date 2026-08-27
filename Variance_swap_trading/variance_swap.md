@@ -97,3 +97,5 @@ The maths outlined above leads us to us VIX as a property $ K_{\text{var}} $
 
 ## References
 
+Carr, P., & Madan, D. (2010). Towards a Theory of Volatility Trading. In E. Jouini, J. Cvitanic, & M. Musiela (Eds.), Handbooks in Mathematical Finance: Option Pricing, Interest Rates and Risk Management. Cambridge University Press. 
+
