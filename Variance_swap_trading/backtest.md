@@ -1,7 +1,7 @@
 
 # Backtesting our variance swap stratergy
 
-Here I attempt to create a backtest for a variance swap stratergy, deciding to enter a postion based on previous volatilty as a future forecasted voltiltiy. This is certinaly an area that can be improved possibly using Garch to model future volaitlity. From Here we decide to enter a postion based on the deviations from the mean. Here I return the returns in addative variance points.
+Here I attempt to create a backtest for a variance swap strategy, deciding to enter a position based on previous volatility as a future forecasted voltiltiy. This is certianly an area that can be improved possibly using Garch to model future volatility. From Here we decide to enter a postion based on the deviations from the mean. Here I return the returns in addative variance points.
 
 ## Libaries
 ```python
@@ -13,7 +13,7 @@ import numpy as np
 
 # Downloading our SPX and VIX data  
 
-as mentioned in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), We can use the VIX hisotrical prices as a proxy for our $ K_{\text{var}} $ value because of the VIX's metholody, they both use a $ \frac{1}{K^2}$ strip of OTM options to come up with the markets estimation of future volatility. The problems with using this as a proxy is that we assume we can enter a variance swap at directly the $ \frac{1}{K^2}$ value given. This is an intresting point as buy enterting a varaince swap, we are shifting the replication to a market maker which may bring additonal costs. 
+as mentioned in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), We can use the VIX hisotrical prices as a proxy for our $ K_{\text{var}} $ value because of the VIX's methology, they both use a $ \frac{1}{K^2}$ strip of OTM options to come up with the markets estimation of future volatility. The problems with using this as a proxy is that we assume we can enter a variance swap at directly the $ \frac{1}{K^2}$ value given. This is an intresting point as buy enterting a varaince swap, we are shifting the replication to a market maker which may bring additonal costs. 
 
 ```python
 spx = yf.download("^GSPC", start="2000-01-01", end="2026-01-01")
@@ -22,7 +22,7 @@ prices_spx = spx["Close"].squeeze()
 prices_vix = vix["Close"].squeeze()
 ```
 
-# daily log prices for the S&P 500
+# Daily log prices for the S&P 500
 
 Going back to the orginal motivation for this project [Z. Kakushadze and J.A. Serur. 151 Trading Strategies] we use the formula outline in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), again calcualting the log daily changes in price and squaring, then summing them unitl contract maturity. 
 
