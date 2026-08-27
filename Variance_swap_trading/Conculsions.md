@@ -17,7 +17,7 @@ We can see that changes in the volatility are negative for the payoff.
 
 ## Chaning the Volatility Forecast
 
-When we change our variance forecast to be a weighted average of the previous rolling 15,30,60,90 annulsied volatilities. we can improve our sharpe ratio, from 0.08 to 0.19
+When we change our variance forecast to be a weighted average of the previous rolling 15,30,60,90 annulsied volatilities. we can improve our sharpe ratio, from 0.08 to 0.19 for our S&P 500 model. 
 
 ```python
 prev_15_day_var = log_return_daily.rolling(15).var() *252
@@ -38,4 +38,4 @@ In the future It would be intresting to test these methods against eachother, se
 
 ![alt text](Figures/nasdaq_variance_swap_return.png)![alt text](Figures/Adapted_vol_forecast_SPX_returns_OFS.png)
 
-Here The returns of VRP star
+Here we observe, using our updated volatility forecasting that selling or buying volatility when it is under or overpriced performs much better for the NASDAQ.
