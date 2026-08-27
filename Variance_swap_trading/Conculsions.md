@@ -3,6 +3,14 @@
 - Variance swaps are short vol of vol
 - Improving volatility forecast improves Sharpe Ratio
 
+- 
+## Tech Stocks seem to have a higher VRP
+
+
+![alt text](Figures/nasdaq_variance_swap_return.png)![alt text](Figures/Adapted_vol_forecast_SPX_returns_OFS.png)
+
+Here we observe, using our updated volatility forecasting that selling or buying volatility when it is under or overpriced performs much better for the NASDAQ. The NASDAQ consists of tech stocks, a observation could be that tech stocks usually have higher VRPs due to possible notions of pre- profit or the potential of technology being generally over hyped, pushing up implied volatities, which creates an oppourinty for shorting vol more lucrative. What would be intresting is to apply this to single stock options chains and 
+
 
 
 ## Variance swaps are short 'vol of vol'
@@ -41,13 +49,6 @@ forecast_variance = 0.5*prev_15_day_var + 0.3*prev_30_day_var + 0.15*prev_60_day
 
 
 In the future It would be intresting to test these methods against eachother, seeing which creates the best forecast for volatility. 
-
-## Tech Stocks seem to have a higher VRP
-
-
-![alt text](Figures/nasdaq_variance_swap_return.png)![alt text](Figures/Adapted_vol_forecast_SPX_returns_OFS.png)
-
-Here we observe, using our updated volatility forecasting that selling or buying volatility when it is under or overpriced performs much better for the NASDAQ. The NASDAQ consists of tech stocks, a observation could be that tech stocks usually have higher VRPs due to possible notions of pre- profit or the potential of technology being generally over hyped, pushing up implied volatities, which creates an oppourinty for shorting vol more lucrative. What would be intresting is to apply this to single stock options chains and 
 
 
 
