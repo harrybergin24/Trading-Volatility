@@ -1,7 +1,7 @@
 
-# Backtesting our variance swap stratergy
+# Back testing our variance swap strategy
 
-Here I attempt to create a backtest for a variance swap strategy, deciding to enter a position based on previous volatility as a future forecasted voltiltiy. This is certianly an area that can be improved possibly using Garch to model future volatility. From Here we decide to enter a postion based on the deviations from the mean. Here I return the returns in addative variance points.
+Here I attempt to create a backtest for a variance swap strategy, deciding to enter a position based on previous volatility as a future forecasted volatility. This is certainly an area that can be improved possibly using Garch to model future volatility. From Here we decide to enter a position based on the deviations from the mean. Here I return the returns in additive variance points.
 
 ## Libaries
 ```python
@@ -13,7 +13,7 @@ import numpy as np
 
 # Downloading our SPX and VIX data  
 
-as mentioned in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), We can use the VIX hisotrical prices as a proxy for our $ K_{\text{var}} $ value because of the VIX's methology, they both use a $ \frac{1}{K^2}$ strip of OTM options to come up with the markets estimation of future volatility. The problems with using this as a proxy is that we assume we can enter a variance swap at directly the $ \frac{1}{K^2}$ value given. This is an intresting point as buy enterting a varaince swap, we are shifting the replication to a market maker which may bring additonal costs. 
+as mentioned in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), We can use the VIX hisotrical prices as a proxy for our $ K_{\text{var}} $ value because of the VIX's methodology, they both use a $ \frac{1}{K^2}$ strip of OTM options to come up with the markets estimation of future volatility. The problems with using this as a proxy is that we assume we can enter a variance swap at directly the $ \frac{1}{K^2}$ value given. This is an interesting point as buy entering a variance swap, we are shifting the replication to a market maker which may bring additional costs. 
 
 ```python
 spx = yf.download("^GSPC", start="2000-01-01", end="2026-01-01")
@@ -24,7 +24,7 @@ prices_vix = vix["Close"].squeeze()
 
 # Daily log prices for the S&P 500
 
-Going back to the orginal motivation for this project [Z. Kakushadze and J.A. Serur. 151 Trading Strategies] we use the formula outline in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), again calcualting the log daily changes in price and squaring, then summing them unitl contract maturity. 
+Going back to the orginal motivation for this project [Z. Kakushadze and J.A. Serur. 151 Trading Strategies] we use the formula outline in [Variance Swaps](<Variance_swap_trading/variance_swap.md>), again calculating the log daily changes in price and squaring, then summing them until contract maturity. 
 
 ```python
 log_return_daily = np.log(prices_spx).diff()
@@ -33,7 +33,7 @@ Kvar = (prices_vix / 100) ** 2
 
 # Forecasting Volatility 
 
-here we use a previous months variance to forecast the next 30 days, in the future I hope to change this possibly comparing different forecasts for volatilty.   
+here we use a previous months variance to forecast the next 30 days, in the future I hope to change this possibly comparing different forecasts for volatility.   
 ```python
 window = 21
 daily_variance_forecast = log_return_daily.rolling(window).var()
@@ -53,7 +53,7 @@ forecast_30d_variance = (252/window) * daily_variance_forecast
 
 # Defining The volatiltiy risk premium
 
-This is a topic I have been fasicnated by for over 3 years, I 
+This is a topic I have been fascinated for over 3 years, I want to further investigate this area in the future. 
 
 
 [Carr and Wu, 2009]
@@ -77,7 +77,7 @@ print(vrp_z)
 
 # Signal Creation
 
-I adapt my signal generation from my pairs trading stratergy, as it is the same basic concept of mean reversion. Here I enter when the VRP is either too high or too low. This was good pratice of python general concepts lists, dicts and such, which I learnt from my programming module and kaggle course. Possibly in the futuer as i study "Mastering Python For Finance", I hope to be able to learn how to programme more complicated stratergies such as introducing a weighting factor. 
+I adapt my signal generation from my pairs trading strategy, as it is the same basic concept of mean reversion. Here I enter when the VRP is either too high or too low. This was good pratice of python general concepts lists, dicts and such, which I learnt from my programming module and kaggle course. Possibly in the future as I study "Mastering Python For Finance", I hope to be able to learn how to programme more complicated strategies such as introducing a weighting factor. 
 ```python
 position = 0  # 0 nothing, 1 long var swap, -1 short var swap
 
@@ -117,7 +117,7 @@ positions_series = pd.Series(
 )
 ```
 # Removing Rows 
-Here I remove the rows where no trades are entered, so it just returns the date and value of the postion(long or short). Entry record here is importat as it gives us the start date of the swap and then from there calculate the payoff of the swap, reciving the $ K_{\text{var}} $ value when shorting and then paying the realised. 
+Here I remove the rows where no trades are entered, so it just returns the date and value of the postion(long or short). Entry record here is important as it gives us the start date of the swap and then from there calculate the payoff of the swap, receiving the $ K_{\text{var}} $ value when shorting and then paying the realised. 
 
 ```python
 entry_record = positions_series[positions_series != 0]
@@ -186,7 +186,7 @@ plt.close()
 
 ## Performance metrics
 
-Here i calculate the Cumlative payoff, here I use the cumlative sum because varaince being addative, as i keep my returns in variance points. In the future I will change it into vega units. The number of payoffs is jsut the number of trades, so i use an average of trades per year.
+Here I calculate the Cumulative payoff, here I use the cumulative sum because variance being additive, as I keep my returns in variance points. In the future I will change it into vega units. The number of payoffs is just the number of trades, so I use an average of trades per year.
 
 ```python
 cumulative_payoff = payoff.cumsum()
@@ -225,7 +225,7 @@ plt.close()
 ![Variance Swap Payoff](Figures/Cumlative_Variance_Swap_Return_In_Sample.png) ![Out of sample payoff](Figures/Cumlative_Variance_Swap_Return_Out_Of_Sample.png)
 
 
-The large reduction in sharpe, can possilby be explained by reduced underfitting and large expsoure to tail risk. The large drawdowns across equites causes a change in volaility, as variance swaps are short 'vol of vol'. We see this when we exculde the year 2020 we get a sharpe ratio of 1. 
+The large reduction in Sharpe, can possibly be explained by reduced overfitting and large exposure to tail risk. The large drawdowns across equites causes a change in volatility, as variance swaps are short 'vol of vol'. We see this when we exculde the year 2020 we get a sharpe ratio of 1. 
 
 ![Nasdaq](Figures/Figures/variance_swap_return_nasdaq.png)
 
