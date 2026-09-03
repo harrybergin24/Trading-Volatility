@@ -3,7 +3,6 @@
 - Variance swaps are short vol of vol
 - Improving volatility forecast improves Sharpe Ratio
 
-- 
 ## Tech Stocks seem to have a higher VRP
 
 
