@@ -130,7 +130,7 @@ positions_series = pd.Series(
 ```
 # Make a record of date entered swap
 
-Here we make a record of the dat entered the swap and then calucated the next 30 realised vol,  
+Here we make a record of the date entered into the swap and then calculated the next 30 realised vol,  
 
 ```python
 realised_var_30d = {}
