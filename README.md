@@ -8,7 +8,7 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 | File | Description | Results |
 |---|---|---|
 |[Variance Swap](<Variance_swap_trading/variance_swap.md>)|Explation and theory behind variance swaps| I show that they have convex payoffs |
-|[Backtest](<Variance_swap_trading/Variance Swap backtest in sample.ipynb>)|Back testing on S&P 500| 0.19 Sharpe ratio |
+|[Backtest](<Variance_swap_trading/Variance Swap backtest Out Of sample.ipynb>)|Back testing on S&P 500| 0.19 Sharpe ratio |
 |[Conculsions](<Variance_swap_trading/Conculsions.md>)|Explanations for the results| 0.43 Sharpe ratio when applied to the Nasdaq |
 
 I have updated this to forecast volatitilty using GARCH(1,1).
