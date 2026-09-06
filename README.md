@@ -11,7 +11,7 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 |[Backtest](<Variance_swap_trading/backtest.md>)|Back testing on S&P 500| 0.19 Sharpe ratio |
 |[Conculsions](<Variance_swap_trading/Conculsions.md>)|Explanations for the results| 0.43 Sharpe ratio when applied to the Nasdaq |
 
-
+I have updated this to forecast volatitilty using GARCH(1,1).
 
 
 ## VRP Trading with gamma hedging
