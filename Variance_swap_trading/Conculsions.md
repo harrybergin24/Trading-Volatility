@@ -1,7 +1,7 @@
 # Conculsions
 - NASDAQs relationship to volatility is different to our SPX
 - Variance swaps are short vol of vol
-- Improving volatility forecast improves Sharpe Ratio
+- Possible explantions for difference of returns between put selling and shorting Var Swaps
 
 ## Tech Stocks seem to have a higher VRP
 
