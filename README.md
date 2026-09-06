@@ -11,7 +11,7 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 |[Backtest](<Variance_swap_trading/Variance Swap backtest Out Of sample.ipynb>)|Back testing on S&P 500| 0.19 Sharpe ratio |
 |[Conculsions](<Variance_swap_trading/Conculsions.md>)|Explanations for the results| 0.43 Sharpe ratio when applied to the Nasdaq |
 
-I have updated this to forecast volatitilty using GARCH(1,1).
+I have updated this to forecast volatility using GARCH(1,1). I am learning stochastic processes in order to learn how to model volatility stochastically. 
 
 ## [Investigating VRP](<Investigating VRP/ investigating_VRP.md>) 
 In this file I start to look at VRP in a different angle instead of finding strategies to harvest this risk premia, I attempt to investiage how the VRP changes over time. I look at what are its componement parts, how it changes over time and why it changes. Then based of inputs about VRP what trades are the best to make and it has possible applciations to vol managed portfoilos.
