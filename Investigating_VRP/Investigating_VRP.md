@@ -4,11 +4,18 @@ Instead of starting from a product or a strategy to approach this idea of a vola
 
 Format:
 
-VRP? what is it 
+VRP? what is it
+
+VRP into Jump risk? term structure risk?
+
 What are the different Volatility regimes ?
+
 How does VRP correlate to these regimes? 
-what does ${\frac{\partial VRP}{\partial t}$ look like, when does it peak 
-explain why ${\frac{\partial VRP}{\partial t}$ 
+
+what does ${\frac{\partial}{\partial t}VRP}$ look like, when does it peak 
+
+explain why ${\frac{\partial}{\partial t}VRP}$ changes, 
+
 compare to other indicies, 
 
 
