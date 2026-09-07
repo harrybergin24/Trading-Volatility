@@ -9,9 +9,9 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 |---|---|---|
 |[Variance Swap](<Variance_swap_trading/variance_swap.md>)|Explation and theory behind variance swaps| I show that they have convex payoffs |
 |[Backtest](<Variance_swap_trading/Variance Swap backtest Out Of sample.ipynb>)|Back testing on S&P 500| 0.19 Sharpe ratio |
-|[Conculsions](<Variance_swap_trading/Conculsions.md>)|Explanations for the results| 0.43 Sharpe ratio when applied to the Nasdaq |
+|[SPX VRP vs NDAQ VRP](<Variance_swap_trading/Conculsions.md>)|I try an expaling| Correlation of S&P VRP and  |
 
-I have updated this to forecast volatility using GARCH(1,1). I am learning stochastic processes in order to learn how to model volatility stochastically. 
+I have updated this to forecast volatility using GARCH(1,1), I backtest garch on in and out of sample data because garch relies on historical data to fit the paramters. This is where the importance of in and out of sample backtesting comes in. 
 
 ## [Investigating VRP](<Investigating_VRP/Investigating_VRP.md>) 
 In this file I start to look at VRP in a different angle instead of finding strategies to harvest this risk premia, I attempt to investiage how the VRP changes over time. I look at what are its componement parts, how it changes over time and why it changes. Then based of inputs about VRP what trades are the best to make and it has possible applciations to vol managed portfoilos.
