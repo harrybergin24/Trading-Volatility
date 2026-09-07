@@ -13,7 +13,7 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 
 I have updated this to forecast volatility using GARCH(1,1). I am learning stochastic processes in order to learn how to model volatility stochastically. 
 
-## [Investigating VRP](<Investigating VRP/ investigating_VRP.md>) 
+## [Investigating VRP](<Investigating VRP/Investigating_VRP.md>) 
 In this file I start to look at VRP in a different angle instead of finding strategies to harvest this risk premia, I attempt to investiage how the VRP changes over time. I look at what are its componement parts, how it changes over time and why it changes. Then based of inputs about VRP what trades are the best to make and it has possible applciations to vol managed portfoilos.
 
 
