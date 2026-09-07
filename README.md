@@ -9,7 +9,8 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 |---|---|---|
 |[Variance Swap](<Variance_swap_trading/variance_swap.md>)|Explation and theory behind variance swaps| I show that they have convex payoffs |
 |[Backtest](<Variance_swap_trading/Variance Swap backtest Out Of sample.ipynb>)|Back testing on S&P 500| 0.19 Sharpe ratio |
-|[SPX VRP vs NDAQ VRP](<Variance_swap_trading/Conculsions.md>)|I try an expaling| Correlation of S&P VRP and  |
+|[SPX VRP vs NDAQ VRP](<Variance_swap_trading/Difference%20in%20Between%20VRP%20for%20NDAQ%20and%20SPX.ipynb>)|I try highlight causes for the Difference in returns between NDAQ and SPX| Correlation between S&P VRP and NDAQ VRP has increased dramatically over the last 3 years|
+
 
 I have updated this to forecast volatility using GARCH(1,1), I backtest garch on in and out of sample data because garch relies on historical data to fit the paramters. This is where the importance of in and out of sample backtesting comes in. 
 
