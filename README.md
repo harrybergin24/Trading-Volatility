@@ -13,7 +13,7 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 
 I have updated this to forecast volatility using GARCH(1,1), I backtest garch on in and out of sample data because garch relies on historical data to fit the paramters. This is where the importance of in and out of sample backtesting comes in. 
 
-Checklist
+Checklist updated version: 
 | File | Description | Results |
 |---|---|---|
 |[Introduction and Motivation](</Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
