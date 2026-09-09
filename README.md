@@ -1,4 +1,4 @@
-# Trading-Volatility
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8a324993-04d9-4514-8f24-f086a9fbe913" /># Trading-Volatility
 
 This project is involved in explaining and testing some of the trading strategies listed in (Z. Kakushadze and J.A. Serur. 151 Trading Strategies). I have always been interested in risk premia investing, I have now got to the technical level in my programming and mathematics to give a basic outline and create a simple backtest for one of the volatility trading strategies. In the future as I develop my techincal skills I hope to dive deeper, explaining and breaking down the replication stratergy for the variance swaps. Some other stratergies I hope to adress in the future is trading volatility, specifically the volatility risk premium(VRP), using gamma hedging. 
 
@@ -13,9 +13,14 @@ Here I backtest a variance swap strategy by attempting to use VIX as a estimator
 
 I have updated this to forecast volatility using GARCH(1,1), I backtest garch on in and out of sample data because garch relies on historical data to fit the paramters. This is where the importance of in and out of sample backtesting comes in. 
 
-## [Investigating VRP](<Investigating_VRP/Investigating_VRP.md>) 
-In this file I start to look at VRP in a different angle instead of finding strategies to harvest this risk premia, I attempt to investiage how the VRP changes over time. I look at what are its componement parts, how it changes over time and why it changes. Then based of inputs about VRP what trades are the best to make and it has possible applciations to vol managed portfoilos.
-
+Checklist
+| File | Description | Results |
+|---|---|---|
+|Introduction and Motivation| Theory behind variance swaps|  Not done yet |
+|Mathematics Behind VRP| Find $K_{Var}$| sharpe ratio and other metrics | Not done yet |
+|Forecasting Volaitlty |Use Garch to forecast future vol | Not done yet|
+|Back Test  |Back test on in and out of sample| Not done yet|
+| Comparison |Look at other methods of trading vol | Not done yet|
 
 ## VRP Trading with gamma hedging
 
