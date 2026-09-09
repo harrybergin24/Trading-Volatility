@@ -17,7 +17,7 @@ Checklist
 | File | Description | Results |
 |---|---|---|
 |Introduction and Motivation| Theory behind variance swaps|  Not done yet |
-|Mathematics Behind VRP| Find $K_{Var}$| sharpe ratio and other metrics | Not done yet |
+|Mathematics Behind VRP| Find $K_{Var}$| Not done yet |
 |Forecasting Volaitlty |Use Garch to forecast future vol | Not done yet|
 |Back Test  |Back test on in and out of sample| Not done yet|
 | Comparison |Look at other methods of trading vol | Not done yet|
