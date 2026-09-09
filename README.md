@@ -16,7 +16,7 @@ I have updated this to forecast volatility using GARCH(1,1), I backtest garch on
 Checklist
 | File | Description | Results |
 |---|---|---|
-|Introduction and Motivation| Theory behind variance swaps|  Not done yet |
+|[Introduction and Motivation](</Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
 |Mathematics Behind VRP| Find $K_{Var}$| Not done yet |
 |Forecasting Volaitlty |Use Garch to forecast future vol | Not done yet|
 |Back Test  |Back test on in and out of sample| Not done yet|
