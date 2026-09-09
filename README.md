@@ -22,6 +22,7 @@ Checklist updated version:
 |Forecasting Volaitlty |Use Garch to forecast future vol | Not done yet|
 |Back Test  |Back test on in and out of sample| Not done yet|
 | Comparison |Look at other methods of trading vol | Not done yet|
+| Appendix A |Deriving The replication formula | Not done yet|
 
 ## VRP Trading with gamma hedging
 
