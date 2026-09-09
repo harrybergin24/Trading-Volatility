@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8a324993-04d9-4514-8f24-f086a9fbe913" /># Trading-Volatility
+# Volatilty Trading
 
 This project is involved in explaining and testing some of the trading strategies listed in (Z. Kakushadze and J.A. Serur. 151 Trading Strategies). I have always been interested in risk premia investing, I have now got to the technical level in my programming and mathematics to give a basic outline and create a simple backtest for one of the volatility trading strategies. In the future as I develop my techincal skills I hope to dive deeper, explaining and breaking down the replication stratergy for the variance swaps. Some other stratergies I hope to adress in the future is trading volatility, specifically the volatility risk premium(VRP), using gamma hedging. 
 
