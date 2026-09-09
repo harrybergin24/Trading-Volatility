@@ -17,7 +17,7 @@ Checklist updated version:
 | File | Description | Results |
 |---|---|---|
 |[Introduction and Motivation](</Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
-|| Defining the VIX| done|
+|[Defining the VRP](</Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| done|
 |Justifying Use of the VIX| Find $K_{Var}$| Not done yet |
 |Forecasting Volaitlty |Use Garch to forecast future vol | Not done yet|
 |Back Test  |Back test on in and out of sample| Not done yet|
