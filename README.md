@@ -17,10 +17,10 @@ Checklist updated version:
 | File | Description | Results |
 |---|---|---|
 |[Introduction and Motivation](</Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
-|[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
+|[Defineing the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
-|Forecasting Volaitlty |Use Garch to forecast future vol | Not done yet|
+|Forecasting volatility|Use GARCH(1,1) to forecast future vol | Not done yet|
 |Back Test  |Back test on in and out of sample| Not done yet|
 | Comparison |Look at other methods of trading vol | Not done yet|
 | Appendix A |Deriving The replication formula | Not done yet|
