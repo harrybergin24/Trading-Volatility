@@ -23,5 +23,5 @@ Checklist updated version:
 | Comparison |Look at other methods of trading vol | Not done yet|
 | Appendix A |Link to delta hedged portfolio payoff | Not done yet|
 
-Variance_swap_trading/FinalVS/Introduction_1%20(1).ipynb
+[does it work](<Variance_swap_trading/FinalVS/Introduction_1.ipynb>)
 
