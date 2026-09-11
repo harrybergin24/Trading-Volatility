@@ -14,7 +14,7 @@ Here I back test a variance swap strategy, the conditions to enter a position is
 Checklist updated version: 
 | File | Description | Results |
 |---|---|---|
-|[Introduction and Motivation](<[/Variance_swap_trading/FinalVS/Introduction_1(1).ipynb](Variance_swap_trading/FinalVS/Introduction_1%20(1).ipynb)>)| Theory behind variance swaps|  Done |
+|[Introduction and Motivation](<Variance_swap_trading/FinalVS/Introduction_1%20(1).ipynb)>)| Theory behind variance swaps|  Done |
 |[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
