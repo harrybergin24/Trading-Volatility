@@ -20,6 +20,8 @@ Checklist updated version:
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
 |Back Test  |Back test on in and out of sample| Not done yet|
 | Comparison |Look at other methods of trading vol | Not done yet|
+| Structuring aspect| Mark-to-Market, secondary market for a VS | Not done yet|
 | Appendix A |Link to delta hedged portfolio payoff | Not done yet|
+
 
 
