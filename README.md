@@ -13,11 +13,11 @@ Checklist updated version:
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
 |[Back Test](</Variance_swap_trading/FinalVS/Backtest_Final_VS-Copy1%20(1).ipynb>)  |GARCH, VRP and culmative returns| Done|
-| Comparison |Look at other methods of trading vol | Not done yet|
+| Analysis | Trying to explain the returns and compare to other methods| Not done yet|
 | Appendix A |Link to delta hedged portfolio payoff | Not done yet|
 
 
-## Structuring Aspect
+### Structuring Aspect
 In the future I want to do some work on the pricing of forwards and options on variance swaps. Options will require some more work due to the stochastic volatility models required, which I am going to learn. 
 
 | File | Description | Results |
