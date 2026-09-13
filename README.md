@@ -11,7 +11,7 @@ Checklist updated version:
 |[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
-|[Back Test](</Variance_swap_trading/FinalVS/Backtest_Final_VS-Copy1%20(1).ipynb>)  |GARCH, VRP and culmative returns| Done|
+|[Back Test](<(Variance_swap_trading/FinalVS/Backtest_Final_VS_Copy1.ipynb)>)  |GARCH, VRP and culmative returns| Done|
 | PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
 
 
@@ -26,7 +26,7 @@ I give motivation for investigating volatility as an asset. I show the example o
 ### [Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>) :
 This part is the mathematics behind using the VIX for the S&P 500, which can be generalised to other incides and single stocks with their own volatility measure index.
 
-### [Back Test](</Variance_swap_trading/FinalVS/Backtest_Final_VS-Copy1%20(1).ipynb>) :
+### [Back Test](<(Variance_swap_trading/FinalVS/Backtest_Final_VS_Copy1.ipynb)>) :
 This is the main part of the project computationally speaking. 
 
 ### PnL Analysis :
