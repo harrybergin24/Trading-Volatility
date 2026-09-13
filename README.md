@@ -12,7 +12,7 @@ Checklist updated version:
 |[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
-|Back Test  |Back test on in and out of sample| Not done yet|
+|[Back Test](</Variance_swap_trading/FinalVS/Backtest_Final_VS-Copy1%20(1).ipynb>)  |GARCH, VRP and culmative returns| Done|
 | Comparison |Look at other methods of trading vol | Not done yet|
 | Appendix A |Link to delta hedged portfolio payoff | Not done yet|
 
