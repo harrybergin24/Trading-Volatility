@@ -9,7 +9,7 @@ Checklist updated version:
 |---|---|---|
 |[Introduction and Motivation](<Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
 |[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
-|[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps |Done|
+|[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps and Greeks |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
 |[Back Test](<(Variance_swap_trading/FinalVS/Backtest_Final_VS_Copy1.ipynb)>)  |GARCH, VRP and culmative returns| Done|
 | PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
@@ -23,6 +23,7 @@ I give motivation for investigating volatility as tradeable quantity. I show the
 I explain and give the mathematical definition of the Volatility risk premium. 
 
 ### [Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>) :
+In this section I plot the payoff of a variance swap showing that its payoff is convex in volatility, I also show this mathematically. I am currently adding to this the different Greeks of a variance swap to identify is sensitivities. 
 
 
 ### [Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>) :
