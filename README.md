@@ -17,11 +17,13 @@ Checklist updated version:
 
 
 ### [Introduction and Motivation](<Variance_swap_trading/FinalVS/Introduction_1.ipynb>) :
-I give motivation for investigating volatility as an asset. I show the example of selling puts being historically a very lucrative strategy. 
+I give motivation for investigating volatility as tradeable quantity. I show the example of selling puts being historically a very lucrative strategy. 
 
 ### [Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>) :
+I explain and give the mathematical definition of the Volatility risk premium. 
 
 ### [Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>) :
+
 
 ### [Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>) :
 This part is the mathematics behind using the VIX for the S&P 500, which can be generalised to other incides and single stocks with their own volatility measure index.
