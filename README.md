@@ -4,7 +4,7 @@ This project is involved in explaining and testing some of the trading strategie
 
  # Variance Swaps   
 Here I back test a variance swap strategy, the conditions to enter a position is based of the deviations from the mean of the VRP, high upward deviations sell vol and vice versa. The Current version is below and I am currently working on the updated version, which goes into a lot more depth into the mathematics behind the link between replication and the VIX. I am also go into a lot more depth into the forecasting of future volatility using GARCH, as well as showing the distribution of volatility over the last 20 years or so. In the back test I also test the strategy on in and out of sample data, analysing these results and then comparing them to the Nasdaq. I am also going to add an appendix highlighting the link between the gamma formula and the volatility. 
-Checklist updated version: 
+
 | File | Description | Results |
 |---|---|---|
 |[Introduction and Motivation](<Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
