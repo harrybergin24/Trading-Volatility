@@ -14,26 +14,8 @@ Here I back test a variance swap strategy, the conditions to enter a position is
 |[Back Test](<(Variance_swap_trading/FinalVS/Backtest_Final_VS_Copy1.ipynb)>)  |GARCH, VRP and culmative returns| Done|
 | PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
 
-
-
-### [Introduction and Motivation](<Variance_swap_trading/FinalVS/Introduction_1.ipynb>) :
-I give motivation for investigating volatility as tradeable quantity. I show the example of selling puts being historically a very lucrative strategy. 
-
-### [Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>) :
-I explain and give the mathematical definition of the Volatility risk premium. 
-
-### [Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>) :
-In this section I plot the payoff of a variance swap showing that its payoff is convex in volatility, I also show this mathematically. I am currently adding to this the different Greeks of a variance swap to identify is sensitivities. 
-
-
-### [Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>) :
-This part is the mathematics behind using the VIX for the S&P 500, which can be generalised to other incides and single stocks with their own volatility measure index.
-
-### [Back Test](<(Variance_swap_trading/FinalVS/Backtest_Final_VS_Copy1.ipynb)>) :
-This is the main part of the project computationally speaking. 
-
-### PnL Analysis :
-
+Key discoveries and findings:
+- For the optimisation of the z-score parameter it would of course choose a value very close to zero as a majority of the time $VRP > 0$, so I have adapted the strategy to have two different entry parameters for entering a short variance swap and a long variance swap. 
 
 
 
