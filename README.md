@@ -17,6 +17,7 @@ Here I back test a variance swap strategy, the conditions to enter a position is
 Key discoveries and findings:
 - For the optimisation of the z-score parameter it would of course choose a value very close to zero as a majority of the time $VRP > 0$, so I have adapted the strategy to have two different entry parameters for entering a short variance swap and a long variance swap.
 - I have to change the amount of for loops, as currently it is quite slow. I am going to take Harvard's course on Data Structures and Algorithms to hopefully learn more to speed this up
+- The returns are disappointing, I suspect this is due to the large tail risk of short volatility positions. I am going to attempt to add a weighting of trades as currently all trades have equal weighting
 - The strategy performs better on the Nasdaq, I hypothesise: the performance is better due to tech stocks having traits conducive to investors over estimating future volatility, therefore short volatility strategies are effective. These traits of tech stocks include having high valuation multiples, low return on invested capital and an especially important idea of concentration risk amongst the 100 stocks in the index
 
 
