@@ -11,7 +11,7 @@ Here I back test a variance swap strategy, the conditions to enter a position is
 |[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps and Greeks |Done|
 |[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
-|[Back Test](<(Variance_swap_trading/FinalVS/Backtest_Final_VS_Copy1.ipynb)>)  |GARCH, VRP and culmative returns| Done|
+|[Back Test](<Variance_swap_trading/FinalVS/Backtest_SPX_FINAL.ipynb)>)  |GARCH, VRP and culmative returns| Done|
 | PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
 
 Key discoveries and findings:
