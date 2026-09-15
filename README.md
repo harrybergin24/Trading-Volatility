@@ -16,7 +16,6 @@ Here I back test a variance swap strategy, the conditions to enter a position is
 
 Key discoveries and findings:
 - For the optimisation of the z-score parameter it would of course choose a value very close to zero as a majority of the time $VRP > 0$, so I have adapted the strategy to have two different entry parameters for entering a short variance swap and a long variance swap.
-- I have to change the amount of for loops, as currently it is quite slow. I am going to take Harvard's course on Data Structures and Algorithms to hopefully learn more to speed this up
 
 - The returns are disappointing, I suspect this is due to the large tail risk of short volatility positions. I am going to attempt to add a weighting of trades as currently all trades have equal weighting
 
@@ -24,6 +23,8 @@ Key discoveries and findings:
 
 Future Additions:
 - Instead of going through the strategy returns for each index or asset it is tested on would be quite time consuming, I think it would be more useful to try and gain a general rule between the traits of a asset and what makes trading its volatility profitable or not. This is currently what I am working on, trying to identify across assets from gold to the russell 2000 to try and identify a pattern
+
+- I have to change the amount of for loops, as currently it is quite slow. I am going to take Harvard's course on Data Structures and Algorithms to hopefully learn more to speed this up
 
 
 
