@@ -15,8 +15,8 @@ Here I back test a variance swap strategy, the conditions to enter a position is
 | PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
 
 Key discoveries and findings:
-- For the optimisation of the z-score parameter it would of course choose a value very close to zero as a majority of the time $VRP > 0$, so I have adapted the strategy to have two different entry parameters for entering a short variance swap and a long variance swap. 
-
+- For the optimisation of the z-score parameter it would of course choose a value very close to zero as a majority of the time $VRP > 0$, so I have adapted the strategy to have two different entry parameters for entering a short variance swap and a long variance swap.
+- I have to change the amount of for loops, as currently it is quite slow. I am going to take Harvard's course on Data Structures and Algorithms to hopefully learn more to speed this up
 
 
 
