@@ -20,6 +20,9 @@ Key discoveries and findings:
 - The returns are disappointing, I suspect this is due to the large tail risk of short volatility positions. I am going to attempt to add a weighting of trades as currently all trades have equal weighting
 - The strategy performs better on the Nasdaq, I hypothesise: the performance is better due to tech stocks having traits conducive to investors over estimating future volatility, therefore short volatility strategies are effective. These traits of tech stocks include having high valuation multiples, low return on invested capital and an especially important idea of concentration risk amongst the 100 stocks in the index
 
+Future Additions:
+- Instead of going through the strategy returns for each index or asset it is tested on would be quite time consuming, I think it would be more useful to try and gain a general rule between the traits of a asset and what makes trading its volatility profitable or not. This is currently what I am working on, trying to identify across assets from gold to the russell 2000 to try and identify a pattern
+
 
 
 
