@@ -29,7 +29,7 @@ Future Additions:
 
 
 
-## Structuring Aspect
+# Structuring Aspect
 In the future I want to do some work on the pricing of forwards and options on variance swaps. Options will require some more work due to the stochastic volatility models required, which I am going to learn. 
 
 | File | Description | Results |
