@@ -7,7 +7,7 @@ In this project I back test 30-day variance swaps, which behave similarly to str
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps and Greeks |Done|
 |[Justifying Use of the VIX](<Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
 |[Back Test](<Backtest_SPX_FINAL.ipynb>)  |GARCH, VRP and culmative returns| Done|
-| PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
+| PnL Analysis | I am currently working on an improved version of this| Not done yet|
 
 Recent Changes:
 - Walk Foward validiation for GARCH volatitily modelling
