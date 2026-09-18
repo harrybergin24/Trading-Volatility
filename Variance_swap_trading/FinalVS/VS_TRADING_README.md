@@ -5,7 +5,7 @@ In this project I back test 30-day variance swaps, which behave similarly to str
 |[Introduction and Motivation](<Variance_swap_trading/FinalVS/Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
 |[Defining the VRP](<Variance_swap_trading/FinalVS/Introduction_to_VRP.pdf>)| Defining the VIX| Done|
 |[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps and Greeks |Done|
-|[Justifying Use of the VIX](<Variance_swap_trading/FinalVS/Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
+|[Justifying Use of the VIX](<Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
 |[Back Test](<Variance_swap_trading/FinalVS/Backtest_SPX_FINAL.ipynb>)  |GARCH, VRP and culmative returns| Done|
 | PnL Analysis | Trying to explain the returns and compare to other methods| Not done yet|
 
