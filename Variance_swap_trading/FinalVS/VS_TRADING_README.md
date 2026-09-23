@@ -4,8 +4,8 @@ In this project I back test 30-day variance swaps, which behave similarly to str
 |---|---|---|
 |[Introduction and Motivation](<Introduction_1.ipynb>)| Theory behind variance swaps|  Done |
 |[Defining the VRP](<Introduction_to_VRP.pdf>)| Defining the VIX| Done|
-|[Variance Swaps](<Variance_swap_trading/FinalVS/Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps and Greeks |Done|
-|[Justifying Use of the VIX](<Justifying_the_use_of_the_VIX__through_replication.pdf>)| The mathematics behind it all| Done |
+|[Variance Swaps](<Variance%20Swaps.ipynb>)|Explain the convex payoff of variance swaps and Greeks |Done|
+|[Justifying Use of the VIX](<Backtest_SPX_FINAL%20(1).ipynb)>)| The mathematics behind it all| Done |
 |[Back Test](<Backtest_SPX_FINAL.ipynb>)  |GARCH, VRP and culmative returns| Done|
 | PnL Analysis | I am currently working on an improved version of this| Not done yet|
 
